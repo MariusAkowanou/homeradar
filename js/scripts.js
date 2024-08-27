@@ -223,8 +223,15 @@ function initHomeradar() {
         arrows: false,
     });
     //   Checkboxes ------------------
+    //var myDiv = $(".geodir-category-content p");
+    //myDiv.text(myDiv.text().substring(0, 90) + '...');
     var myDiv = $(".geodir-category-content p");
-    myDiv.text(myDiv.text().substring(0, 90) + '...');
+    myDiv.each(function() {
+        var originalText = $(this).text();
+        if (originalText.length > 100) {
+            $(this).text(originalText.substring(0, 100) + '...');
+        }
+    })
     var $checkboxes = $('.leave-rating input:radio');
     $checkboxes.change(function () {
         var countCheckedCheckboxes = $checkboxes.filter(':checked').attr("data-ratingtext");
