@@ -94,23 +94,19 @@
                                             <div class="col-md-2"></div>
                                             <div class="col-md-4">
                                                 <div class="main-search-input-wrap shadow_msiw msiw-column fl-wrap">
-                                                    <div class="msiw-column_title">Formulaire de recherche </div>
-                                                    <div class="main-search-input fl-wrap">
+                                                    <div class="msiw-column_title">Formulaire de recherche</div>
+                                                    <form class="main-search-input fl-wrap" onsubmit="return sendInfoToWhatsApp()">
                                                         <div class="main-search-input-item">
-                                                            <input type="text" placeholder="ville de recherche" value=""/>
+                                                            <input name="ville" id="ville" required onClick="this.select()" type="text" placeholder="Ville de recherche" value=""/>
                                                         </div>
                                                         <div class="main-search-input-item">
-                                                            <div class="main-search-input-item">
-                                                                <input type="text" placeholder="Votre nom" value=""/>
-                                                            </div>
+                                                            <input name="name" type="text" id="name" required onClick="this.select()" placeholder="Votre nom" value=""/>
                                                         </div>
                                                         <div class="main-search-input-item">
-                                                            <div class="main-search-input-item">
-                                                                <input type="email" placeholder="votre email" value=""/>
-                                                            </div>
+                                                            <input name="email" id="email" required onClick="this.select()" type="email" placeholder="Votre email" value=""/>
                                                         </div>
-                                                        <button class="main-search-button color-bg" >  Envoyer  </button>
-                                                    </div>
+                                                        <button class="main-search-button color-bg" type="submit">Envoyer</button>
+                                                    </form>
                                                 </div>
                                                 
                                             </div>

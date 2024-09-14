@@ -248,8 +248,8 @@
                                             <div class="profile-widget-content fl-wrap">
                                                 <div class="contats-list fl-wrap">
                                                     <ul class="no-list-style">
-                                                        <li><span><i class="fal fa-phone"></i> Phone :</span> <a href="#">+7(123)987654</a></li>
-                                                        <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="">JessieWilcox@domain.com</a></li>
+                                                        <li><span><i class="fal fa-phone"></i> Phone :</span> <a href="https://wa.me/22951207090?text=Bonjour%20!">+7(123)987654</a></li>
+                                                        <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="mailto:riusakn@gmail.com">JessieWilcox@domain.com</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="profile-widget-footer fl-wrap">
@@ -272,16 +272,15 @@
                                     <!--box-widget-->
                                     <div class="box-widget fl-wrap">
                                         <div class="box-widget-fixed-init fl-wrap" id="sec-contact">
-                                            <div class="box-widget-title fl-wrap box-widget-title-color color-bg">Contact </div>
+                                            <div class="box-widget-title fl-wrap box-widget-title-color color-bg">Contact</div>
                                             <div class="box-widget-content fl-wrap">
                                                 <div class="custom-form">
-                                                    <form method="post"  name="contact-property-form">
-                                                        <label>Your name* <span class="dec-icon"><i class="fas fa-user"></i></span></label>
-                                                        <input   name="phone" type="text"    onClick="this.select()" value="">
-                                                        <label>Your phone  * <span class="dec-icon"><i class="fas fa-phone"></i></span></label>
-                                                        <input   name="phone" type="text"    onClick="this.select()" value="">      
-                                                        
-                                                        <button type="submit" class="btn float-btn color-bg fw-btn"> Send</button>
+                                                    <form id="contact-property-form" onsubmit="return sendToWhatsApp()">
+                                                        <label>Votre nom* <span class="dec-icon"><i class="fas fa-user"></i></span></label>
+                                                        <input name="name" type="text" id="name" required onClick="this.select()" value="">
+                                                        <label>Votre téléphone* <span class="dec-icon"><i class="fas fa-phone"></i></span></label>
+                                                        <input name="phone" type="text" id="phone" required onClick="this.select()" value="">
+                                                        <button type="submit" class="btn float-btn color-bg fw-btn">Envoyer</button>
                                                     </form>
                                                 </div>
                                             </div>

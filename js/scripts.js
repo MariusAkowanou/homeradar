@@ -458,6 +458,7 @@ function initHomeradar() {
             });
         }   
     }
+ 
 initIsotope();
     // modal ------------------
     var wlwrp = $(".header-modal"),
@@ -470,6 +471,7 @@ initIsotope();
         hideMobileMenu();
         hideSearch();
     }
+
     function hideWishlist() {
         wlwrp.fadeOut(1).removeClass("vis-wishlist").addClass("novis_wishlist");
         wllink.removeClass("scwllink");
@@ -973,3 +975,47 @@ $(document).ready(function () {
     initHomeradar();
     initparallax();
 });
+
+/*************************** */
+function sendToWhatsApp() {
+    var name = document.getElementById('name').value;
+    var phone = document.getElementById('phone').value;
+    
+    if (name && phone) {
+        // Remplacez ce numéro par votre numéro WhatsApp
+        var whatsappNumber = "22951207090";
+        var message = "Nom: " + name + "%0ATéléphone: " + phone;
+        var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+        document.getElementById('name').value = '';
+        document.getElementById('phone').value = '';
+        
+        window.open(whatsappUrl, '_blank');
+        return false; // Empêche la soumission normale du formulaire
+    }
+    return false; // Empêche la soumission si les champs sont vides
+}  
+
+/*************************** */
+function sendInfoToWhatsApp() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var ville = document.getElementById('ville').value;
+    
+    if (name && email && ville) {
+        // Remplacez ce numéro par votre numéro WhatsApp
+        var whatsappNumber = "22951207090";
+        var message = "Nom: " + encodeURIComponent(name) + 
+                      "%0AVille de recherche d'appartement: " + encodeURIComponent(ville) + 
+                      "%0AEmail: " + encodeURIComponent(email);
+        var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + message;
+        document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('ville').value = '';
+        
+        window.open(whatsappUrl, '_blank');
+        return false; // Empêche la soumission normale du formulaire
+    }
+    alert("Veuillez remplir tous les champs.");
+    return false; // Empêche la soumission si les champs sont vides
+}
